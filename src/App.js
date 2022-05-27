@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Grid from "./Grid";
+import { useState } from "react";
+
+const DEFAULT_WORDS = [
+  {
+    w: "notChecked",
+    h: "noMatch",
+    i: "letterMatch",
+    l: "positionMatch",
+    e: "notMatch",
+  },
+  {
+    w: "notChecked",
+    h: "noMatch",
+    i: "letterMatch",
+    l: "positionMatch",
+    e: "notMatch",
+  },
+  {},
+  {},
+  {},
+  {},
+];
 
 function App() {
+  const [words, setWords] = useState(DEFAULT_WORDS);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Grid words={words} />
     </div>
   );
 }
